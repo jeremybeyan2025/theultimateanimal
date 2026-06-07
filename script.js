@@ -1,40 +1,37 @@
 const revealItems = document.querySelectorAll('.reveal');
 const cursorLight = document.querySelector('.cursor-light');
 const topbar = document.querySelector('.topbar');
-const cards = document.querySelectorAll('.matrix-card');
-const title = document.getElementById('condition-title');
-const copy = document.getElementById('condition-copy');
-const tags = document.getElementById('condition-tags');
+const speciesButtons = document.querySelectorAll('.species-btn');
+const conditionRows = document.querySelectorAll('.condition-row');
+const speciesOutput = document.getElementById('species-output');
+const conditionOutput = document.getElementById('condition-output');
+const resultCopy = document.getElementById('result-copy');
+const resultTags = document.getElementById('result-tags');
 
 const conditionData = {
   joint: {
-    title: 'Joint Degeneration & Mobility',
-    copy: 'For aging pets, working dogs, sport horses, arthritis conversations, and vet-managed mobility support pathways.',
+    label: 'Joint degeneration + mobility decline',
+    copy: 'A vet-directed pathway for mobility decline, senior animal comfort, sport load, and joint recovery support conversations.',
     tags: ['BPC-157', 'TB-500', 'KPV']
   },
   soft: {
-    title: 'Tendon, Ligament & Soft Tissue',
-    copy: 'For CCL stress, equine tendon load, agility injuries, strain recovery, and structured rehab conversations.',
-    tags: ['TB-500', 'BPC-157', 'Thymosin β4']
-  },
-  post: {
-    title: 'Post-Procedure Recovery',
-    copy: 'For professional post-procedure tissue support discussions under veterinary supervision and clinic protocols.',
-    tags: ['BPC-157', 'GHK-Cu', 'TB-500']
+    label: 'Tendon, ligament + soft tissue stress',
+    copy: 'A recovery pathway for high-load tissue stress, CCL conversations, equine tendon demand, and structured rehabilitation support.',
+    tags: ['TB-500', 'Thymosin β4', 'BPC-157']
   },
   gut: {
-    title: 'Gut & Inflammatory Stress',
-    copy: 'For GI integrity, inflammatory burden, appetite disruption, skin-gut axis conversations, and sensitive cases.',
+    label: 'Gut integrity + inflammatory burden',
+    copy: 'A professional pathway for GI integrity, inflammatory stress, appetite disruption, sensitive animals, and skin-gut axis cases.',
     tags: ['KPV', 'BPC-157']
   },
   skin: {
-    title: 'Skin, Coat & Wound Support',
-    copy: 'For dermal quality, coat condition, barrier integrity, irritation support, and tissue repair research categories.',
+    label: 'Skin, coat + wound-support category',
+    copy: 'A tissue-quality pathway for dermal barrier support, coat condition, irritation support, and wound-support research categories.',
     tags: ['GHK-Cu', 'KPV']
   },
-  performance: {
-    title: 'Performance & Longevity',
-    copy: 'For working dogs, sport horses, senior animals, and long-term recovery optimization under veterinary direction.',
+  longevity: {
+    label: 'Performance longevity + recovery optimization',
+    copy: 'A performance pathway for working animals, sport horses, senior pets, and long-horizon recovery optimization under veterinary judgment.',
     tags: ['Epitalon', 'Thymosin', 'Recovery Stack']
   }
 };
@@ -49,7 +46,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.14 });
 
 revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${Math.min(index * 45, 260)}ms`;
+  item.style.transitionDelay = `${Math.min(index * 42, 240)}ms`;
   observer.observe(item);
 });
 
@@ -61,24 +58,32 @@ window.addEventListener('mousemove', (event) => {
 
 window.addEventListener('scroll', () => {
   if (!topbar) return;
-  topbar.style.background = window.scrollY > 80 ? 'rgba(2,3,4,.91)' : 'rgba(2,3,4,.72)';
+  topbar.style.background = window.scrollY > 80 ? 'rgba(2,6,8,.94)' : 'rgba(2,6,8,.82)';
 });
 
-cards.forEach((card) => {
-  card.addEventListener('click', () => {
-    const selected = conditionData[card.dataset.condition];
-    if (!selected) return;
-    cards.forEach((item) => item.classList.remove('active'));
-    card.classList.add('active');
-    title.textContent = selected.title;
-    copy.textContent = selected.copy;
-    tags.innerHTML = selected.tags.map((tag) => `<span>${tag}</span>`).join('');
+speciesButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    speciesButtons.forEach((item) => item.classList.remove('active'));
+    button.classList.add('active');
+    speciesOutput.textContent = button.dataset.species;
   });
 });
 
-const accessButton = document.querySelector('.access-form .btn');
+conditionRows.forEach((row) => {
+  row.addEventListener('click', () => {
+    const selected = conditionData[row.dataset.condition];
+    if (!selected) return;
+    conditionRows.forEach((item) => item.classList.remove('active'));
+    row.classList.add('active');
+    conditionOutput.textContent = selected.label;
+    resultCopy.textContent = selected.copy;
+    resultTags.innerHTML = selected.tags.map((tag) => `<span>${tag}</span>`).join('');
+  });
+});
+
+const accessButton = document.querySelector('.access-form .cta');
 if (accessButton) {
   accessButton.addEventListener('click', () => {
-    accessButton.textContent = 'Request Captured';
+    accessButton.textContent = 'Verification Request Captured';
   });
 }
