@@ -3,164 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Ultimate Animal | Veterinary Peptide Supply</title>
-  <meta name="description" content="A premium vet-only peptide supply platform organized by species, ailment, and clinical recovery category." />
+  <title>The Ultimate Animal | VetBio Command System</title>
+  <meta name="description" content="Vet-only peptide supply organized through a proprietary species, ailment, and recovery intelligence interface." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bioscan-bg"></div>
   <div class="cursor-light"></div>
-  <div class="grain"></div>
 
   <header class="topbar">
-    <a href="#top" class="logo-lockup">
-      <span class="logo-beast">UA</span>
-      <span><b>The Ultimate Animal</b><small>Veterinary Peptide Supply</small></span>
+    <a href="#top" class="brand-system">
+      <span class="brand-emblem"><i></i></span>
+      <span><b>THE ULTIMATE ANIMAL</b><small>VetBio Command System</small></span>
     </a>
     <nav>
-      <a href="#species">Species</a>
-      <a href="#matrix">Ailment Matrix</a>
-      <a href="#catalog">Peptide Categories</a>
-      <a href="#access" class="topbar-cta">Vet Access</a>
+      <a href="#command">Command</a>
+      <a href="#pathways">Pathways</a>
+      <a href="#supply">Supply</a>
+      <a href="#access" class="nav-pill">Verify</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero-stage">
-      <div class="hero-grid">
-        <div class="hero-copy reveal">
-          <p class="kicker">For licensed veterinary professionals</p>
-          <h1>Built for animals that can’t afford slow recovery.</h1>
-          <p class="lede">A cinematic, vet-only peptide supply platform organized around the way clinics actually evaluate cases: species, ailment, tissue system, and recovery objective.</p>
-          <div class="hero-actions">
-            <a href="#matrix" class="btn btn-primary">Enter Ailment Matrix</a>
-            <a href="#access" class="btn btn-ghost">Request Vet Account</a>
-          </div>
+    <section class="command-hero" id="command">
+      <div class="hero-copy reveal">
+        <p class="system-label">Veterinary peptide intelligence / verified professional channel</p>
+        <h1>Species-guided peptide supply for veterinary recovery cases.</h1>
+        <p class="hero-lede">A professional ordering ecosystem built like a clinical interface: choose species, isolate the ailment, match the recovery category, and route the case through a vet-only supply workflow.</p>
+        <div class="hero-actions">
+          <a href="#pathways" class="cta cta-primary">Run Recovery Matrix</a>
+          <a href="#access" class="cta cta-secondary">Request Vet Verification</a>
         </div>
-
-        <div class="beast-visual reveal" aria-hidden="true">
-          <div class="scanline"></div>
-          <div class="beast-name">CANINE / EQUINE</div>
-          <div class="speed-lines"></div>
-          <div class="animal animal-dog"><span></span></div>
-          <div class="animal animal-horse"><span></span></div>
-          <div class="target target-one"><b>Joint</b><small>mobility support</small></div>
-          <div class="target target-two"><b>Tendon</b><small>soft tissue support</small></div>
-          <div class="target target-three"><b>Gut</b><small>inflammatory stress</small></div>
+        <div class="micro-proof">
+          <span>Canine</span><span>Equine</span><span>Rehab</span><span>Performance</span><span>Recovery</span>
         </div>
       </div>
 
-      <div class="ticker" aria-label="Platform focus">
-        <div>
-          <span>VET ONLY</span><span>CANINE PERFORMANCE</span><span>EQUINE SPORTS MEDICINE</span><span>REHAB CLINICS</span><span>JOINT + TENDON + GI + SKIN</span><span>PEPTIDE SUPPLY</span>
+      <div class="command-console reveal" aria-label="Veterinary peptide command interface">
+        <div class="console-top">
+          <span>UA-VETBIO / LIVE MATRIX</span>
+          <span>STATUS: PROFESSIONAL</span>
         </div>
-      </div>
-    </section>
-
-    <section id="species" class="species-panel reveal">
-      <article>
-        <span class="index">01</span>
-        <h2>Canine</h2>
-        <p>Working dogs, agility dogs, senior pets, orthopedic recovery, chronic mobility stress, and inflammatory burden.</p>
-      </article>
-      <article>
-        <span class="index">02</span>
-        <h2>Equine</h2>
-        <p>Sport horses, tendon load, ligament strain, joint stress, performance recovery, and high-value rehabilitation cases.</p>
-      </article>
-      <article>
-        <span class="index">03</span>
-        <h2>Companion</h2>
-        <p>Vet-directed care pathways for aging animals, skin integrity, gut stress, recovery support, and quality-of-life protocols.</p>
-      </article>
-    </section>
-
-    <section id="matrix" class="matrix-section">
-      <div class="section-head reveal">
-        <p class="kicker">Clinical navigation</p>
-        <h2>Ailment Matrix</h2>
-        <p>Select the animal problem first. Product categories follow the case logic.</p>
-      </div>
-
-      <div class="matrix-grid">
-        <button class="matrix-card reveal active" data-condition="joint">
-          <small>01</small><b>Joint Degeneration</b><span>Arthritis, stiffness, mobility decline</span>
-        </button>
-        <button class="matrix-card reveal" data-condition="soft">
-          <small>02</small><b>Tendon / Ligament</b><span>CCL stress, equine tendon load, strain</span>
-        </button>
-        <button class="matrix-card reveal" data-condition="post">
-          <small>03</small><b>Post Procedure</b><span>Vet-supervised tissue recovery support</span>
-        </button>
-        <button class="matrix-card reveal" data-condition="gut">
-          <small>04</small><b>Gut + Inflammation</b><span>GI integrity and inflammatory stress</span>
-        </button>
-        <button class="matrix-card reveal" data-condition="skin">
-          <small>05</small><b>Skin / Coat / Wound</b><span>Barrier, tissue, and dermal support</span>
-        </button>
-        <button class="matrix-card reveal" data-condition="performance">
-          <small>06</small><b>Performance Longevity</b><span>Working animals and senior optimization</span>
-        </button>
-      </div>
-
-      <div class="protocol-display reveal">
-        <div>
-          <p class="kicker">Selected pathway</p>
-          <h3 id="condition-title">Joint Degeneration & Mobility</h3>
-          <p id="condition-copy">For aging pets, working dogs, sport horses, arthritis conversations, and vet-managed mobility support pathways.</p>
+        <div class="scan-window">
+          <svg viewBox="0 0 760 430" class="animal-scan" role="img" aria-label="Canine and equine diagnostic scan illustration">
+            <defs>
+              <linearGradient id="scanGrad" x1="0" x2="1">
+                <stop offset="0" stop-color="#55f5ff" stop-opacity=".95"/>
+                <stop offset="1" stop-color="#aaffcf" stop-opacity=".75"/>
+              </linearGradient>
+              <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path class="scan-grid-line" d="M30 75H730M30 150H730M30 225H730M30 300H730M120 35V395M250 35V395M380 35V395M510 35V395M640 35V395"/>
+            <path class="horse-line" d="M104 238 C160 170 293 162 385 194 C440 213 487 208 537 182 C558 170 585 181 595 207 C604 230 590 251 565 255 C538 260 522 276 517 312 M189 244 L172 342 M281 222 L271 354 M406 220 L429 348 M498 214 L489 346"/>
+            <path class="dog-line" d="M126 168 C177 118 275 118 329 150 C360 169 394 161 428 136 C447 122 474 132 484 153 C492 171 482 192 459 198 C430 205 419 221 414 255 M181 171 L162 270 M260 160 L253 280 M342 162 L358 272"/>
+            <circle class="node n1" cx="260" cy="160" r="8"/><circle class="node n2" cx="429" cy="348" r="8"/><circle class="node n3" cx="459" cy="198" r="8"/><circle class="node n4" cx="517" cy="312" r="8"/>
+            <path class="molecule" d="M620 78 L667 104 L667 158 L620 184 L574 158 L574 104 Z M667 104 L708 82 M667 158 L707 184 M574 104 L532 82 M574 158 L532 184"/>
+          </svg>
+          <div class="scan-sweep"></div>
+          <div class="console-callout callout-a"><b>JOINT</b><span>mobility pathway</span></div>
+          <div class="console-callout callout-b"><b>TENDON</b><span>soft tissue pathway</span></div>
+          <div class="console-callout callout-c"><b>GI / SKIN</b><span>inflammatory pathway</span></div>
         </div>
-        <div class="protocol-tags" id="condition-tags">
-          <span>BPC-157</span><span>TB-500</span><span>KPV</span>
+        <div class="console-bottom">
+          <div><b>Species</b><span>Canine / Equine / Companion</span></div>
+          <div><b>Logic</b><span>Ailment → Category → Supply</span></div>
+          <div><b>Channel</b><span>Verified Vet Only</span></div>
         </div>
       </div>
     </section>
 
-    <section id="catalog" class="catalog-section">
-      <div class="section-head reveal">
-        <p class="kicker">Supplier catalog architecture</p>
-        <h2>Peptide categories without consumer hype.</h2>
-        <p>Positioned for professional evaluation, clean sourcing, and responsible veterinary channel sales.</p>
+    <section id="pathways" class="matrix-lab">
+      <div class="section-intro reveal">
+        <p class="system-label">Proprietary condition routing</p>
+        <h2>The Recovery Matrix</h2>
+        <p>Instead of dumping products into a catalog, The Ultimate Animal routes veterinarians through species-specific recovery logic.</p>
       </div>
-
-      <div class="catalog-list reveal">
-        <article><b>BPC-157</b><span>Tissue support, GI integrity, soft-tissue recovery research category.</span></article>
-        <article><b>TB-500 / Thymosin β4</b><span>Tendon, ligament, mobility, and performance recovery research category.</span></article>
-        <article><b>KPV</b><span>Inflammatory stress, skin, and gut-support research category.</span></article>
-        <article><b>GHK-Cu</b><span>Dermal, coat, wound-support, and tissue-quality research category.</span></article>
-        <article><b>Longevity Peptides</b><span>Age-management and performance longevity category for vet-directed review.</span></article>
+      <div class="lab-layout">
+        <aside class="species-selector reveal">
+          <button class="species-btn active" data-species="Canine">Canine <span>working / rehab / senior</span></button>
+          <button class="species-btn" data-species="Equine">Equine <span>sport / tendon / joint load</span></button>
+          <button class="species-btn" data-species="Companion">Companion <span>skin / gut / longevity</span></button>
+        </aside>
+        <div class="condition-stack reveal">
+          <button class="condition-row active" data-condition="joint"><span>01</span><b>Joint degeneration + mobility decline</b><i>BPC-157 / TB-500 / KPV</i></button>
+          <button class="condition-row" data-condition="soft"><span>02</span><b>Tendon, ligament + soft tissue stress</b><i>TB-500 / Thymosin β4 / BPC-157</i></button>
+          <button class="condition-row" data-condition="gut"><span>03</span><b>Gut integrity + inflammatory burden</b><i>KPV / BPC-157</i></button>
+          <button class="condition-row" data-condition="skin"><span>04</span><b>Skin, coat + wound-support category</b><i>GHK-Cu / KPV</i></button>
+          <button class="condition-row" data-condition="longevity"><span>05</span><b>Performance longevity + recovery optimization</b><i>Epitalon / Thymosin / Recovery Stack</i></button>
+        </div>
+      </div>
+      <div class="result-panel reveal">
+        <p class="system-label">Current pathway</p>
+        <h3><span id="species-output">Canine</span> / <span id="condition-output">Joint degeneration + mobility decline</span></h3>
+        <p id="result-copy">A vet-directed pathway for mobility decline, senior animal comfort, sport load, and joint recovery support conversations.</p>
+        <div id="result-tags" class="result-tags"><span>BPC-157</span><span>TB-500</span><span>KPV</span></div>
       </div>
     </section>
 
-    <section class="black-card reveal">
-      <p class="kicker">Brand position</p>
-      <h2>Not a pet wellness store. Not a supplement gimmick. A serious veterinary peptide supplier.</h2>
-      <div class="black-card-grid">
-        <span>License-aware account access</span>
-        <span>Species-first product logic</span>
-        <span>Batch/documentation-ready language</span>
-        <span>No dosing claims on public pages</span>
+    <section id="supply" class="supply-system">
+      <div class="section-intro reveal">
+        <p class="system-label">Supplier architecture</p>
+        <h2>Built like a medical supply channel, not a pet brand.</h2>
+      </div>
+      <div class="supply-grid">
+        <article class="supply-card reveal"><span>01</span><h3>Vet Verification</h3><p>Account access built around professional identity, clinic context, and intended veterinary use.</p></article>
+        <article class="supply-card reveal"><span>02</span><h3>Condition Catalog</h3><p>Products are framed by recovery category and species logic, not consumer wellness claims.</p></article>
+        <article class="supply-card reveal"><span>03</span><h3>Documentation Layer</h3><p>Batch, handling, sourcing, and professional-use language prepared for a serious clinical audience.</p></article>
+        <article class="supply-card reveal"><span>04</span><h3>Partner Support</h3><p>Education-forward support for clinics evaluating peptide categories for animals under veterinary judgment.</p></article>
       </div>
     </section>
 
-    <section id="access" class="access-section reveal">
+    <section id="access" class="access-panel reveal">
       <div>
-        <p class="kicker">Vet access</p>
-        <h2>Open a professional account.</h2>
-        <p>The Ultimate Animal is designed for clinics, rehab veterinarians, integrative veterinary practices, equine sports medicine teams, and performance-animal providers.</p>
+        <p class="system-label">Launch access</p>
+        <h2>Open the vet-only channel.</h2>
+        <p>For veterinary clinics, equine sports medicine teams, canine rehab centers, integrative veterinarians, and performance-animal practices.</p>
       </div>
       <form class="access-form">
         <input type="text" placeholder="Clinic / practice name" aria-label="Clinic or practice name">
         <input type="email" placeholder="Professional email" aria-label="Professional email">
-        <select aria-label="Primary focus">
-          <option>Primary practice focus</option>
+        <select aria-label="Primary practice focus">
+          <option>Primary focus</option>
           <option>Canine rehab / sports medicine</option>
           <option>Equine sports medicine</option>
           <option>General veterinary practice</option>
           <option>Integrative veterinary medicine</option>
         </select>
-        <button type="button" class="btn btn-primary">Request Vet Access</button>
+        <button type="button" class="cta cta-primary">Request Verification</button>
       </form>
     </section>
   </main>
