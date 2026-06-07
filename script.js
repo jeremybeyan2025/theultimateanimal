@@ -1,7 +1,43 @@
 const revealItems = document.querySelectorAll('.reveal');
-const header = document.querySelector('.site-header');
-const core = document.querySelector('.animal-core');
-const floatingCards = document.querySelectorAll('.floating-card');
+const cursorLight = document.querySelector('.cursor-light');
+const topbar = document.querySelector('.topbar');
+const cards = document.querySelectorAll('.matrix-card');
+const title = document.getElementById('condition-title');
+const copy = document.getElementById('condition-copy');
+const tags = document.getElementById('condition-tags');
+
+const conditionData = {
+  joint: {
+    title: 'Joint Degeneration & Mobility',
+    copy: 'For aging pets, working dogs, sport horses, arthritis conversations, and vet-managed mobility support pathways.',
+    tags: ['BPC-157', 'TB-500', 'KPV']
+  },
+  soft: {
+    title: 'Tendon, Ligament & Soft Tissue',
+    copy: 'For CCL stress, equine tendon load, agility injuries, strain recovery, and structured rehab conversations.',
+    tags: ['TB-500', 'BPC-157', 'Thymosin β4']
+  },
+  post: {
+    title: 'Post-Procedure Recovery',
+    copy: 'For professional post-procedure tissue support discussions under veterinary supervision and clinic protocols.',
+    tags: ['BPC-157', 'GHK-Cu', 'TB-500']
+  },
+  gut: {
+    title: 'Gut & Inflammatory Stress',
+    copy: 'For GI integrity, inflammatory burden, appetite disruption, skin-gut axis conversations, and sensitive cases.',
+    tags: ['KPV', 'BPC-157']
+  },
+  skin: {
+    title: 'Skin, Coat & Wound Support',
+    copy: 'For dermal quality, coat condition, barrier integrity, irritation support, and tissue repair research categories.',
+    tags: ['GHK-Cu', 'KPV']
+  },
+  performance: {
+    title: 'Performance & Longevity',
+    copy: 'For working dogs, sport horses, senior animals, and long-term recovery optimization under veterinary direction.',
+    tags: ['Epitalon', 'Thymosin', 'Recovery Stack']
+  }
+};
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -10,61 +46,39 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.16 });
+}, { threshold: 0.14 });
 
 revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${Math.min(index * 55, 320)}ms`;
+  item.style.transitionDelay = `${Math.min(index * 45, 260)}ms`;
   observer.observe(item);
 });
 
+window.addEventListener('mousemove', (event) => {
+  if (!cursorLight) return;
+  cursorLight.style.left = `${event.clientX}px`;
+  cursorLight.style.top = `${event.clientY}px`;
+});
+
 window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  if (y > 60) {
-    header.style.background = 'rgba(5, 8, 11, .86)';
-    header.style.boxShadow = '0 24px 70px rgba(0,0,0,.55)';
-  } else {
-    header.style.background = 'rgba(5, 8, 11, .68)';
-    header.style.boxShadow = '0 30px 90px rgba(0,0,0,.45)';
-  }
+  if (!topbar) return;
+  topbar.style.background = window.scrollY > 80 ? 'rgba(2,3,4,.91)' : 'rgba(2,3,4,.72)';
 });
 
-if (core) {
-  core.addEventListener('mousemove', (event) => {
-    const rect = core.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    const rotateY = ((x / rect.width) - 0.5) * 16;
-    const rotateX = -((y / rect.height) - 0.5) * 16;
-    core.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-    floatingCards.forEach((card, index) => {
-      const depth = (index + 1) * 7;
-      card.style.transform = `translate3d(${rotateY * depth / 4}px, ${rotateX * depth / 4}px, ${depth}px)`;
-    });
-  });
-
-  core.addEventListener('mouseleave', () => {
-    core.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    floatingCards.forEach((card) => {
-      card.style.transform = 'translate3d(0,0,0)';
-    });
-  });
-}
-
-const peptideRows = document.querySelectorAll('.peptide-row');
-peptideRows.forEach((row) => {
-  row.addEventListener('mouseenter', () => {
-    row.style.background = 'rgba(38, 231, 255, .075)';
-  });
-  row.addEventListener('mouseleave', () => {
-    row.style.background = 'transparent';
+cards.forEach((card) => {
+  card.addEventListener('click', () => {
+    const selected = conditionData[card.dataset.condition];
+    if (!selected) return;
+    cards.forEach((item) => item.classList.remove('active'));
+    card.classList.add('active');
+    title.textContent = selected.title;
+    copy.textContent = selected.copy;
+    tags.innerHTML = selected.tags.map((tag) => `<span>${tag}</span>`).join('');
   });
 });
 
-const formButton = document.querySelector('.contact-form button');
-if (formButton) {
-  formButton.addEventListener('click', () => {
-    formButton.textContent = 'Access Request Captured';
-    formButton.style.filter = 'saturate(1.25) brightness(1.08)';
+const accessButton = document.querySelector('.access-form .btn');
+if (accessButton) {
+  accessButton.addEventListener('click', () => {
+    accessButton.textContent = 'Request Captured';
   });
 }
